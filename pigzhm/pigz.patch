@@ -1,0 +1,38 @@
+--- pigz.c	2017-12-27 06:48:52.000000000 +0100
++++ pigzhm-2.4/pigz.c	2018-12-16 13:38:42.515304015 +0100
+@@ -1634,7 +1634,7 @@
+         strm.zfree = ZFREE;
+         strm.zalloc = ZALLOC;
+         strm.opaque = OPAQUE;
+-        ret = deflateInit2(&strm, 6, Z_DEFLATED, -15, 8, Z_DEFAULT_STRATEGY);
++        ret = deflateInit2(&strm, 6, Z_DEFLATED, -15, 9, Z_HUFFMAN_ONLY);
+         if (ret == Z_MEM_ERROR)
+             throw(ENOMEM, "not enough memory");
+         if (ret != Z_OK)
+@@ -1662,7 +1662,7 @@
+             if (g.level <= 9) {
+ #endif
+                 (void)deflateReset(&strm);
+-                (void)deflateParams(&strm, g.level, Z_DEFAULT_STRATEGY);
++                (void)deflateParams(&strm, g.level, Z_HUFFMAN_ONLY);
+ #ifndef NOZOPFLI
+             }
+             else {
+@@ -2222,7 +2222,7 @@
+         strm->zfree = ZFREE;
+         strm->zalloc = ZALLOC;
+         strm->opaque = OPAQUE;
+-        ret = deflateInit2(strm, 6, Z_DEFLATED, -15, 8, Z_DEFAULT_STRATEGY);
++        ret = deflateInit2(strm, 6, Z_DEFLATED, -15, 9, Z_HUFFMAN_ONLY);
+         if (ret == Z_MEM_ERROR)
+             throw(ENOMEM, "not enough memory");
+         if (ret != Z_OK)
+@@ -2237,7 +2237,7 @@
+     if (g.level <= 9) {
+ #endif
+         (void)deflateReset(strm);
+-        (void)deflateParams(strm, g.level, Z_DEFAULT_STRATEGY);
++        (void)deflateParams(strm, g.level, Z_HUFFMAN_ONLY);
+ #ifndef NOZOPFLI
+     }
+ #endif
