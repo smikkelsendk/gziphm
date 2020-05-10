@@ -19,48 +19,48 @@ TL;DR: *gziphm* is much faster with similar or in some cases even better compres
 
 Multithreaded version of gzip for compression
 
-|Tool| Ratio | Compression speed (MB/s)|
+|Tool| Ratio | Compression speed (MB/s) |
 |--|--|--|--|
-| pigz | 0.282 | 84.315 
+| pigz | 0.282 | 84.315 |
 | pigz --fast | 0.331 | 777.879| 
 | pigzhm | 0.295 | 1064.449 |
 
 Comparison with alternative tools
-|Tool| Ratio | Compression speed (MB/s) | Decompression speed (MB/s)|
+|Tool| Ratio | Compression speed (MB/s) | Decompression speed (MB/s) |
 |--|--|--|--|
-| lzop | 0.48 | 485.078| 499.415
-| lz4 | 0.527 | 512.102 | 1272.999
-| zstd | 0.294 | 187.285 | 705.72 
+| lzop | 0.48 | 485.078| 499.415 |
+| lz4 | 0.527 | 512.102 | 1272.999 |
+| zstd | 0.294 | 187.285 | 705.72 |
 
 Conclusion: *gziphm* is almost on pair with regular *gzip* while being 20x as fast. Zstd is even faster, especially on decompression
 
 **Human Genome hg19.fa 3.2 GB (Nucleotide sequence)**
-|Tool| Ratio | Compression speed (MB/s) | Decompression speed (MB/s)|
+|Tool| Ratio | Compression speed (MB/s) | Decompression speed (MB/s) |
 |--|--|--|--|
-| gzip | 0.296   | 7.694| 236.106
-| gzip --fast | 0.339 | 76.598  | 185.523
-| gziphm |  0.354 | 159.882 | 196.451
+| gzip | 0.296   | 7.694| 236.106 |
+| gzip --fast | 0.339 | 76.598  | 185.523 |
+| gziphm |  0.354 | 159.882 | 196.451 |
 
 Multithreaded version of gzip for compression
 
-|Tool| Ratio | Compression speed (MB/s)|
+|Tool| Ratio | Compression speed (MB/s) |
 |--|--|--|--|
-| pigz | 0.296 | 87.911 
-| pigz --fast | 0.339 | 753.126| 
+| pigz | 0.296 | 87.911 |
+| pigz --fast | 0.339 | 753.126 |  
 | pigzhm |0.354| 1074.91 |
 
 Comparison with alternative tools
-|Tool| Ratio | Compression speed (MB/s) | Decompression speed (MB/s)|
+|Tool| Ratio | Compression speed (MB/s) | Decompression speed (MB/s) |
 |--|--|--|--|
-| lzop | 0.499 | 459.105| 471.155
-| lz4 | 0.526| 464.981 | 1354.491
-| zstd |  0.311 | 197.391 | 710.186 
+| lzop | 0.499 | 459.105| 471.155 |
+| lz4 | 0.526| 464.981 | 1354.491 |
+| zstd |  0.311 | 197.391 | 710.186 |
 
 
 
 
 **Compression of first 5 gb of nr.fa (BLAST Protein database)**
-|Tool| Ratio | Compression speed (MB/s) | Decompression speed (MB/s)|
+|Tool| Ratio | Compression speed (MB/s) | Decompression speed (MB/s) |
 |--|--|--|--|
 | gzip | 0.541 | 34.21| 150.886
 | gzip --fast | 0.559 | 68.303 | 167.397
@@ -68,18 +68,18 @@ Comparison with alternative tools
 
 Multithreaded version of gzip for compression
 
-|Tool| Ratio | Compression speed (MB/s) 
+|Tool| Ratio | Compression speed (MB/s) |
 |--|--|--|--|
-| pigz | 0.541 | 341.835| 
-| pigz --fast | 0.559 | 645.405| 
+| pigz | 0.541 | 341.835 | 
+| pigz --fast | 0.559 | 645.405 |  
 | pigzhm | 0.657 | 975.982 |
 
 Comparison with alternative tools
-|Tool| Ratio | Compression speed (MB/s) | Decompression speed (MB/s)|
+|Tool| Ratio | Compression speed (MB/s) | Decompression speed (MB/s) |
 |--|--|--|--|
-| lzop | 0.897 | 624.01| 864.865
-| lz4 | 0.86 | 767.962 | 1707.236
-| zstd | 0.504 | 147.955 | 871.045 
+| lzop | 0.897 | 624.01| 864.865 |
+| lz4 | 0.86 | 767.962 | 1707.236 |
+| zstd | 0.504 | 147.955 | 871.045 |
 
 Conclusion: If possible use zstd for protein sequences, as it is more than 4 times faster than regular gzip while giving better compression.
 gziphm is more than 2x faster than gzip --fast, but compression is also worse.
