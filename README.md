@@ -69,7 +69,7 @@ Comparison with alternative tools
 Multithreaded version of gzip for compression
 
 |Tool| Ratio | Compression speed (MB/s) |
-|--|--|--|--|
+|--|--|--|
 | pigz | 0.541 | 341.835 | 
 | pigz --fast | 0.559 | 645.405 |  
 | pigzhm | 0.657 | 975.982 |
