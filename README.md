@@ -20,7 +20,7 @@ TL;DR: *gziphm* is much faster with similar or in some cases even better compres
 Multithreaded version of gzip for compression
 
 |Tool| Ratio | Compression speed (MB/s) |
-|--|--|--|--|
+|--|--|--|
 | pigz | 0.282 | 84.315 |
 | pigz --fast | 0.331 | 777.879| 
 | pigzhm | 0.295 | 1064.449 |
@@ -44,7 +44,7 @@ Conclusion: *gziphm* is almost on pair with regular *gzip* while being 20x as fa
 Multithreaded version of gzip for compression
 
 |Tool| Ratio | Compression speed (MB/s) |
-|--|--|--|--|
+|--|--|--|
 | pigz | 0.296 | 87.911 |
 | pigz --fast | 0.339 | 753.126 |  
 | pigzhm |0.354| 1074.91 |
