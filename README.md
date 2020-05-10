@@ -4,10 +4,9 @@ The compression tool *gzip* uses two different compression strategies (Lempel-Zi
 The underlying zlib implementation allows for using Huffman only, however it is not accessible from gzip /pigz commandline. I have therefore made a new versions of the two tools using Huffman only strategy, allowing much faster compression of especially DNA sequences without much loss in compression ratio.
 
 Benchmarks:
-Performed on i9-9900K (8 cores, 16 threads), 64 gb DDR4 3200MHz
-All data stored on ramdisk (tmpfs)  during benchmark
+Performed on i9-9900K (8 cores, 16 threads), 64 gb DDR4 3200MHz. All data stored on ramdisk (tmpfs)  during benchmark
 
-TL;DR: *gziphm* is much faster with similar or in some cases even better compression ratio than *gzip --fast* for nucleotide sequences. For protein sequences *gziphm* is twice as fast as *gzip --fast* but also compresses worse. Zstd however performs on pair with regular gzip while being faster than gziphm, making it the obvious choice if compatibility is not a concern.
+TL;DR: *gziphm* is much faster with similar or in some cases even better compression ratio than *gzip --fast* for nucleotide sequences. For protein sequences *gziphm* is twice as fast as *gzip --fast* but also compresses worse. Zstd however performs on par with regular gzip while being faster than gziphm, making it the obvious choice if compatibility is not a concern.
  
 
 **Compression of first 5 gb of nt.fa (BLAST Nucleotide database)**
